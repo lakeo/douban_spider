@@ -1,15 +1,11 @@
 # -*-coding:utf-8-*-  
   
 import logging
-  
-"""避免被ban策略之一：使用useragent池。 
- 
-使用注意：需在settings.py中进行相应的设置。 
-"""  
-  
-import random  
-from scrapy.contrib.downloadermiddleware.useragent import UserAgentMiddleware  
-  
+import random
+
+from scrapy.contrib.downloadermiddleware.useragent import UserAgentMiddleware
+
+
 class RotateUserAgentMiddleware(UserAgentMiddleware):  
   
     def __init__(self, user_agent=''):  
@@ -17,11 +13,7 @@ class RotateUserAgentMiddleware(UserAgentMiddleware):
   
     def process_request(self, request, spider):  
         ua = random.choice(self.user_agent_list)  
-        if ua:  
-            #显示当前使用的useragent  
-            print "********Current UserAgent:%s************" %ua  
-  
-            #记录  
+        if ua:
             logging.log(logging.INFO, 'Current UserAgent: '+str(ua))  
             request.headers.setdefault('User-Agent', ua)  
   
