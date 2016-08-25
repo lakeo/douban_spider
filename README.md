@@ -29,3 +29,8 @@ IMAGES_STORE = '/store/path/'
 ```
 $ scrapy crawl user_spider
 ```
+
+
+# todo
+- vpn地址
+- 验证码
