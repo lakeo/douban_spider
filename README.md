@@ -28,8 +28,12 @@ IMAGES_STORE = '/store/path/'
 运行:
 ```
 $ scrapy crawl user_spider
-```
 
+or
+
+$ scrapy crawl user_spider_v2
+```
+注明: user_spider_v2 需要自己复制登录cookie
 
 # todo
 - vpn地址

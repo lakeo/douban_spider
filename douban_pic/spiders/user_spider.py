@@ -35,8 +35,8 @@ class UserCrawlSpider(CrawlSpider):
 
         if img and username:
             item = UserItem()
-            item.image = img
-            item.username = username.strip()
+            item['image'] = img
+            item['username'] = username.strip()
             yield item
 
     def start_requests(self):
